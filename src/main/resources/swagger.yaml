@@ -1,0 +1,38 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Swagger Editor Backend"
+host: "localhost:8000"
+paths:
+  /spec:
+    get:
+      operationId: getSpec
+      x-swagger-router-controller: SpecController
+      description: "the swagger definition, in YAML format, to edit"
+      produces:
+      - "application/yaml"
+      parameters: []
+      responses:
+        200:
+          description: "swagger, in YAML format"
+          schema:
+            type: "string"
+      x-accepts: "application/yaml"
+      x-contentType: "application/json"
+    put:
+      operationId: saveSpec
+      x-swagger-router-controller: SpecController
+      description: "the swagger definition to save"
+      parameters:
+      - in: "body"
+        name: "swagger"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "Saved successfully"
+      x-accepts: "application/json"
+      x-contentType: "application/json"
+definitions: {}

@@ -1,0 +1,11 @@
+controllerPackage: io.swagger.handler
+modelPackage:  io.swagger.model
+swaggerUrl: swagger.yaml
+  
+entityProcessors:
+  - json
+  - xml
+  - yaml
+
+exceptionMappers:
+  - io.swagger.util.ResponseExceptionMapper
